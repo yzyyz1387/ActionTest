@@ -16,8 +16,6 @@ jobs:
 
       - name: Push2Github
         run:
-          git add .
-          git commit -m "update JSON file"
-          git push
+          git add . && git commit -m "update JSON file" && git push
 
 
