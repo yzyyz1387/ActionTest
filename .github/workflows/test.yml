@@ -19,6 +19,6 @@ jobs:
 
       - name: Push2Github
         run:
-          git remote add origin https://yzyyz1387:${{secret.TEST_TOKEN}}@github.com/yzyyz1387/ActionTest.git && git add . && git commit -m "update JSON file" && git push
+          git remote add origin https://yzyyz1387:${{secrets.TEST_TOKEN}}@github.com/yzyyz1387/ActionTest.git && git add . && git commit -m "update JSON file" && git push
 
 
