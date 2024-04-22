@@ -17,8 +17,15 @@ jobs:
       - name: 操作
         run: python md2json.py
 
-      - name: Push2Github
-        run:
-          git remote add origin https://yzyyz1387:${{secrets.TEST_TOKEN}}@github.com/yzyyz1387/ActionTest.git && git add . && git commit -m "update JSON file" && git push
+      - name: commit
+        run: |
+          git config --global user.email ${{ secrets.EMAIL }}
+          git config --global user.name yzyyz1387          
+          git add .
+          git commit -m "update JSON file"
+      - name: pushChanges
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{secrets.TEST_TOKEN}}
 
 
